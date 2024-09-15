@@ -11,8 +11,12 @@
             color: #e0e0e0; /* Cor do texto clara */
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
+            flex: 1;
             width: 80%;
             margin: 0 auto;
             padding: 20px;
@@ -53,9 +57,17 @@
             padding: 20px;
             background-color: #1e1e1e; /* Cor escura do rodapé */
             color: #e0e0e0; /* Cor clara do texto no rodapé */
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        .info-text {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            color: #e0e0e0; /* Cor clara do texto */
         }
     </style>
 </head>
@@ -71,7 +83,16 @@
 
             <input type="submit" value="Cadastrar">
         </form>
+
+        <div class="info-text">
+            Este cadastro é necessário para garantir a exatidão e transparência na contagem de votos. Queremos assegurar que cada pessoa possa participar de forma justa na escolha da melhor roupa de 2024. Além disso, seu cadastro nos ajuda a evitar fraudes e garantir que o resultado final reflita a verdadeira opinião do público.
+            <br><br>
+            O processo é simples e rápido. Após o cadastro, você poderá votar e conferir os resultados em tempo real. Sua participação é fundamental para determinar o design vencedor e ajudar na criação de tendências para o próximo ano.
+            <br><br>
+            Lembre-se, seu voto é importante para fazer parte desta decisão!
+        </div>
     </div>
+
     <div class="footer">
         &copy; 2024 KODAR ® . Todos os direitos reservados.
     </div>
