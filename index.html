@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro para Votação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Cor de fundo escura */
+            color: #e0e0e0; /* Cor do texto clara */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e; /* Cor de fundo do formulário escura */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #00aaff; /* Cor azul para cabeçalhos */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="email"], input[type="password"], input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333; /* Borda escura */
+            border-radius: 4px;
+        }
+        input[type="email"], input[type="password"] {
+            background-color: #333; /* Fundo escuro dos campos de entrada */
+            color: #e0e0e0; /* Cor clara do texto */
+        }
+        input[type="submit"] {
+            background-color: #00aaff; /* Cor azul do botão de envio */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e; /* Cor escura do rodapé */
+            color: #e0e0e0; /* Cor clara do texto no rodapé */
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro para Votação</h1>
+        <form id="registrationForm" action="https://api.sheetmonkey.io/form/3ZHjKJE9hUtZDsTWitnUgz" method="post">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2024 KODAR ® . Todos os direitos reservados.
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var form = document.createElement('form');
+            form.action = 'https://api.sheetmonkey.io/form/3ZHjKJE9hUtZDsTWitnUgz';
+            form.method = 'post';
+
+            var emailField = document.createElement('input');
+            emailField.type = 'hidden';
+            emailField.name = 'email';
+            emailField.value = document.getElementById('email').value;
+            form.appendChild(emailField);
+
+            var passwordField = document.createElement('input');
+            passwordField.type = 'hidden';
+            passwordField.name = 'password';
+            passwordField.value = document.getElementById('password').value;
+            form.appendChild(passwordField);
+
+            document.body.appendChild(form);
+            form.submit();
+
+            // Aguarda um momento para garantir que o formulário tenha sido enviado antes de redirecionar
+            setTimeout(function() {
+                window.location.href = 'vote.html';
+            }, 1000); // Ajuste o tempo se necessário
+        });
+    </script>
+</body>
+</html>
